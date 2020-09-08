@@ -25,10 +25,13 @@ export class EsqueceuSenhaModal {
     }
 
     esqueceuSenha(form) {
-        this.authenticationService.EsqueceuSenha(form.email).subscribe(data => {
+        this.authenticationService.EsqueceuSenha(form.email).subscribe(
+            res => {
             this.presentAlert("Atenção","Senha enviada para seu e-mail.");
             this.dismissModal();
-        });
+        },
+        err => {  this.presentAlert("Erro","Verifique se seu e-mail está correto."); }
+        );
 
 
     }

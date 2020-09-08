@@ -108,18 +108,18 @@ export class AuthenticationService {
     //       );
     // }
 
-    EsqueceuSenha(model): Observable<any> {
-        if (model == null) {
-            model = {}
-        }
-        const httpOptions = {
-            headers: new HttpHeaders({
-                'Content-Type': 'application/json',
-                "Authorization": "Basic YWRtaW46YWRtaW4=",
-                "Cookie": "JSESSIONID=node01wqhgixln03l91w82qe2gb3rac108.node0"
-            }),
-        };
-        return this.http.get(environment.URLS.API_URL + '/painel/mail/forget.php?auth=AKur0On8iWjP2OmasopsZA&mail=' + model.email,httpOptions).pipe(catchError(this.handleError.bind(this)));
+    EsqueceuSenha(email): Observable<any> {
+ 
+        // const httpOptions = {
+        //     headers: new HttpHeaders({
+        //         'Content-Type': 'application/json',
+        //         "Authorization": "Basic YWRtaW46YWRtaW4=",
+        //         "Cookie": "JSESSIONID=node01wqhgixln03l91w82qe2gb3rac108.node0"
+        //     }),
+        // };
+        const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+       // return this.http.get(environment.URLS.API_URL + '/painel/mail/forget.php?auth=AKur0On8iWjP2OmasopsZA&mail=' + model.email,httpOptions).pipe(catchError(this.handleError.bind(this)));
+        return this.http.get('https://timesolucoes.tec.br/ws/mail/forget.php?mail=' + email, { headers, responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
     }
 
     
