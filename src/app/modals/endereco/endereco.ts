@@ -20,11 +20,11 @@ export class EnderecoModal {
     geocoder = new google.maps.Geocoder();
     form;
     constructor(private fb: FormBuilder,
-        private usuarioService: UsuarioService,
-        private routerComponent: Router,
+        public usuarioService: UsuarioService,
+        public routerComponent: Router,
         public modalController: ModalController,
-        private authenticationService: AuthenticationService,
-        private geolocation: Geolocation,
+        public authenticationService: AuthenticationService,
+        public geolocation: Geolocation,
         public alertController: AlertController) {
         this.form = this.fb.group({
             nome: [''],
@@ -93,10 +93,11 @@ export class EnderecoModal {
 
     getLocation() {
 
+       
+
         this.geolocation.getCurrentPosition().then((resp) => {
             let latlng = new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude);
             this.geocoder.geocode({ location: latlng }, (results, status) => {
-                console.log(results);
                 if (status === "OK") {
                     let model = {
                         user_id: this.usuario.user_id,

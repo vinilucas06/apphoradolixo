@@ -8,6 +8,7 @@ import { AuthenticationService } from './services/auth/authentication.service';
 import { Usuario } from './models/usuario';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { FirebaseX } from '@ionic-native/firebase-x/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 //import { FCM } from '@ionic-native/fcm/ngx';
 
 @Component({
@@ -65,9 +66,10 @@ export class AppComponent implements OnInit {
     private router: ActivatedRoute,
     private routerComponent: Router,
     private auth: AuthenticationService,
-    private iab: InAppBrowser,
-    private firebase: FirebaseX,
-    public alertController: AlertController
+    public iab: InAppBrowser,
+    public firebase: FirebaseX,
+    public alertController: AlertController,
+    public geolocation: Geolocation
 
 
   ) {
@@ -98,6 +100,7 @@ export class AppComponent implements OnInit {
         this.routerComponent.navigate(['/login']);
       }
       this.inializeFCM();
+      this.inializeGeo();
 
     });
 
@@ -115,16 +118,26 @@ export class AppComponent implements OnInit {
     const browser = this.iab.create('https://ecotres.com.br/');
   }
   sair() {
-    this.auth.logout();
+    //this.auth.logout();
+    localStorage.removeItem('user');
+    //App.exitApp();
     navigator['app'].exitApp();
     //this.routerComponent.navigate(['/login']);
+  }
+
+  inializeGeo() {
+    this.geolocation.getCurrentPosition().then((resp) => {
+
+    }).catch((error) => {
+      this.presentAlert("Erro : ",error);
+    });
   }
 
   inializeFCM() {
     // this.firebase.getToken().then(token => {alert(token); this.token = token;});
     this.firebase.onMessageReceived().subscribe(data => {
       //var myJSON = JSON.stringify(data.title);
-      this.presentAlert(data.title,data.body);
+      this.presentAlert(data.title, data.body);
     });
   }
 

@@ -19,9 +19,20 @@ export class UsuarioService {
 
 
                 //.addHeader("Cookie", "JSESSIONID=node01wqhgixln03l91w82qe2gb3rac108.node0")
-            }),
+            }), 
         };
-        return this.httpClient.post('https://horadolixo.ml/_ws/createUsers.php?auth=AKur0On8iWjP2OmasopsZA',model,{ responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
+        // console.log("https://horadolixo.ml/_ws/createUsers.php?auth=AKur0On8iWjP2OmasopsZA&user_name="
+        // + model.user_name 
+        // + '&user_telephone=' + model.user_telephone
+        // + '&user_email=' + model.user_email 
+        // + '&user_password=' + model.user_password 
+        // + '&user_registration=' + model.user_registration);
+        return this.httpClient.get('https://horadolixo.ml/_ws/createUsers.php?auth=AKur0On8iWjP2OmasopsZA&user_name=' 
+        + model.user_name 
+        + '&user_telephone=' + model.user_telephone
+        + '&user_email=' + model.user_email 
+        + '&user_password=' + model.user_password 
+        + '&user_registration=' + model.user_registration,{ responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
     }
 
     CadastrarEndereco(model): Observable<any> {
@@ -33,7 +44,17 @@ export class UsuarioService {
                 'Content-Type': 'application/json'
             }),
         };
-        return this.httpClient.post('https://horadolixo.ml/_ws/createAddress.php?auth=AKur0On8iWjP2OmasopsZA',model,{ responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
+        //{ responseType: 'text'}
+        return this.httpClient.get('https://horadolixo.ml/_ws/createAddress.php?auth=AKur0On8iWjP2OmasopsZA&user_id=' + model.user_id
+        + '&addr_zipcode=' + model.addr_zipcode
+        + '&addr_name=' + model.addr_name
+        + '&addr_street=' + model.addr_street
+        + '&addr_number=' + model.addr_number
+        + '&addr_district=' + model.addr_district
+        + '&addr_city=' + model.addr_city
+        + '&addr_state=' + model.addr_state
+        + '&addr_lat=' + model.addr_lat
+        + '&addr_long=' + model.addr_long,{ responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
     }
 
     ConsultarCEP(cep: string): Observable<any> {
@@ -58,7 +79,7 @@ export class UsuarioService {
                 //.addHeader("Cookie", "JSESSIONID=node01wqhgixln03l91w82qe2gb3rac108.node0")
             }),
         };
-        return this.httpClient.put('https://horadolixo.ml/_ws/showAddress.php?auth=AKur0On8iWjP2OmasopsZA&user_id=' + id,httpOptions).pipe(catchError(this.handleError.bind(this)));
+        return this.httpClient.get('https://horadolixo.ml/_ws/showAddress.php?auth=AKur0On8iWjP2OmasopsZA&user_id=' + id,httpOptions).pipe(catchError(this.handleError.bind(this)));
     }
 
     ExcluirEndereco(id): Observable<any> {
@@ -152,7 +173,9 @@ export class UsuarioService {
                 'Content-Type': 'application/json'
             }),
         };
-        return this.httpClient.post('https://horadolixo.ml/_ws/editTokens.php?auth=AKur0On8iWjP2OmasopsZA',model,{ responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
+        return this.httpClient.get('https://horadolixo.ml/_ws/editTokens.php?auth=AKur0On8iWjP2OmasopsZA&user_id=' + model.user_id 
+        + '&notification_status=' + model.notification_status
+        + '&notification_status_days=' + model.notification_status_days,{ responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
     }
 
     CadastrarToken(model): Observable<any> {
@@ -164,7 +187,12 @@ export class UsuarioService {
                 'Content-Type': 'application/json'
             }),
         };
-        return this.httpClient.post('https://horadolixo.ml/_ws/createTokens.php?auth=AKur0On8iWjP2OmasopsZA',model,{ responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
+        return this.httpClient.get('https://horadolixo.ml/_ws/createTokens.php?auth=AKur0On8iWjP2OmasopsZA&app_id=' + model.app_id +
+        '&user_id=' + model.user_id
+        + '&token_value=' + model.token_value
+        + '&notification_status=' + model.notification_status
+        + '&notification_status_days=' + model.notification_status_days
+        ,{ responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
     }
 
 
