@@ -6,7 +6,7 @@ import { AuthenticationService } from 'src/app/services/auth/authentication.serv
 import { Usuario } from 'src/app/models/usuario';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
-
+import { AlertController } from '@ionic/angular';
 
 @Component({
     selector: 'page-historiconotificacao',
@@ -19,7 +19,8 @@ export class HistoricoNotificacaoPage implements OnInit {
     constructor(private fb: FormBuilder,
         private usuarioService: UsuarioService,
         private routerComponent: Router,
-        private authenticationService: AuthenticationService) {
+        private authenticationService: AuthenticationService,
+        public alertController: AlertController) {
     }
 
     ngOnInit(): void {
@@ -42,8 +43,19 @@ export class HistoricoNotificacaoPage implements OnInit {
     excluir(id){
         this.usuarioService.ExcluirNotificacao(id).subscribe(data => {
             this.listar();
+            this.presentAlert();
         });
         
+    }
+
+    async presentAlert() {
+        const alert = await this.alertController.create({
+            header: 'Atenção',
+            message: 'Excluido com sucesso.',
+            buttons: ['OK']
+        });
+
+        await alert.present();
     }
 
 }
