@@ -6,7 +6,7 @@
       <ion-title>Histórico</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content fullscreen overflow-scroll="true">
   <ion-list no-lines>
     <ion-item *ngFor="let hist of historicos">
       Caminhão chegou próximo de você! Dia : {{hist.history_date}}
