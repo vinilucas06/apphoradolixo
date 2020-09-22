@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Platform, AlertController } from '@ionic/angular';
+import { Platform, AlertController, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -69,7 +69,8 @@ export class AppComponent implements OnInit {
     public iab: InAppBrowser,
     public firebase: FirebaseX,
     public alertController: AlertController,
-    public geolocation: Geolocation
+    public geolocation: Geolocation,
+    public menuCtrl: MenuController
 
 
   ) {
@@ -119,17 +120,27 @@ export class AppComponent implements OnInit {
   }
   sair() {
     //this.auth.logout();
-    localStorage.removeItem('user');
-    //App.exitApp();
-    navigator['app'].exitApp();
-    //this.routerComponent.navigate(['/login']);
+    if (this.usuario.user_id != 741) {
+      localStorage.removeItem('user');
+      this.menuCtrl.toggle();
+      //App.exitApp();
+      //navigator['app'].exitApp();
+      this.routerComponent.navigate(['/login']);
+    } else {
+      alert("inicio");
+      this.firebase.getToken().then(token => {
+        alert(token);
+      }, (error) => {
+        alert(error);
+      });
+    }
   }
 
   inializeGeo() {
     this.geolocation.getCurrentPosition().then((resp) => {
 
     }).catch((error) => {
-      this.presentAlert("Erro : ",error);
+      this.presentAlert("Erro : ", error);
     });
   }
 
