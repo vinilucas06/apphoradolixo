@@ -119,7 +119,7 @@ export class AuthenticationService {
         // };
         const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
        // return this.http.get(environment.URLS.API_URL + '/painel/mail/forget.php?auth=AKur0On8iWjP2OmasopsZA&mail=' + model.email,httpOptions).pipe(catchError(this.handleError.bind(this)));
-        return this.http.get('https://timesolucoes.tec.br/ws/mail/forget.php?mail=' + email, { headers, responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
+        return this.http.get('https://timesolucoes.tec.br/ws/mail/forget.php?mail=' + email, { responseType: 'text'}).pipe(catchError(this.handleError.bind(this)));
     }
 
     

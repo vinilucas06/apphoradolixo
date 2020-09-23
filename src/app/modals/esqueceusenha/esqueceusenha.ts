@@ -27,11 +27,18 @@ export class EsqueceuSenhaModal {
     esqueceuSenha(form) {
         this.authenticationService.EsqueceuSenha(form.email).subscribe(
             res => {
-            this.presentAlert("Atenção","Senha enviada para seu e-mail.");
-            this.dismissModal();
-        },
-        err => {  this.presentAlert("Erro","Verifique se seu e-mail está correto."); }
+
+            }
         );
+        this.presentAlert("Senha Redefinida!", "Caso você tenha cadastro em nosso sistema você receberá um e-mail com a redefinição de senha, verifique seu e-mail!");
+        this.dismissModal();
+        // this.authenticationService.EsqueceuSenha(form.email).subscribe(
+        //     res => {
+        //     this.presentAlert("Atenção","Senha enviada para seu e-mail.");
+        //     this.dismissModal();
+        // },
+        // err => {  this.presentAlert("Erro","Verifique se seu e-mail está correto."); }
+        // );
 
 
     }
