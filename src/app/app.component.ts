@@ -8,6 +8,7 @@ import { AuthenticationService } from './services/auth/authentication.service';
 import { Usuario } from './models/usuario';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { FirebaseX } from '@ionic-native/firebase-x/ngx';
+import { Firebase } from '@ionic-native/firebase/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 //import { FCM } from '@ionic-native/fcm/ngx';
 
@@ -67,7 +68,8 @@ export class AppComponent implements OnInit {
     private routerComponent: Router,
     private auth: AuthenticationService,
     public iab: InAppBrowser,
-    public firebase: FirebaseX,
+    public firebaseX: FirebaseX,
+    private firebase: Firebase,
     public alertController: AlertController,
     public geolocation: Geolocation,
     public menuCtrl: MenuController
@@ -146,7 +148,7 @@ export class AppComponent implements OnInit {
 
   inializeFCM() {
     // this.firebase.getToken().then(token => {alert(token); this.token = token;});
-    this.firebase.onMessageReceived().subscribe(data => {
+    this.firebaseX.onMessageReceived().subscribe(data => {
       //var myJSON = JSON.stringify(data.title);
       this.presentAlert(data.title, data.body);
     });
@@ -160,6 +162,28 @@ export class AppComponent implements OnInit {
     });
 
     await alert.present();
+  }
+
+
+   
+  solicitarTokenDoFirebase() {
+ 
+    this.firebase.getToken()
+      .then(token => {
+        this.iniciarListenerDeNotificacoes();
+      }) // save the token server-side and use it to push notifications to this device
+      .catch(error => {
+        console.error('Error getting token', error)
+      });
+ 
+  }
+ 
+  iniciarListenerDeNotificacoes() {
+ 
+    this.firebase.onNotificationOpen().subscribe((notification: any) => {
+      this.presentAlert(notification.title, notification.body);
+    })
+ 
   }
 
 

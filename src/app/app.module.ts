@@ -24,10 +24,12 @@ import { FirebaseX } from "@ionic-native/firebase-x/ngx";
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { EsqueceuSenhaModal } from './modals/esqueceusenha/esqueceusenha';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Firebase } from '@ionic-native/firebase/ngx';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 import { fas } from '@fortawesome/free-solid-svg-icons';
+
 
 library.add(fas);
 
@@ -57,6 +59,7 @@ library.add(fas);
   ],
   providers: [
     Geolocation,
+    Firebase,
     FirebaseX,
     InAppBrowser,
     StatusBar,
