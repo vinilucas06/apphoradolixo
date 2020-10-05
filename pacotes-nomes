@@ -5,3 +5,5 @@
  nome: com.horadolixo.app.new 
  com.horadolixo.app.new
  versão: 0.0.3
+
+    <plugin name="cordova-plugin-firebasex" spec="latest" />
