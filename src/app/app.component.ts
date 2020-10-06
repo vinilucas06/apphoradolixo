@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from './services/auth/authentication.service';
 import { Usuario } from './models/usuario';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { FirebaseX } from '@ionic-native/firebase-x/ngx';
+// import { FirebaseX } from '@ionic-native/firebase-x/ngx';
 import { Firebase } from '@ionic-native/firebase/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 //import { FCM } from '@ionic-native/fcm/ngx';
@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
     private routerComponent: Router,
     private auth: AuthenticationService,
     public iab: InAppBrowser,
-    public firebaseX: FirebaseX,
+    // public firebaseX: FirebaseX,
     private firebase: Firebase,
     public alertController: AlertController,
     public geolocation: Geolocation,
@@ -103,6 +103,7 @@ export class AppComponent implements OnInit {
         this.routerComponent.navigate(['/login']);
       }
       this.inializeFCM();
+      this.iniciarListenerDeNotificacoes();
       this.inializeGeo();
 
     });
@@ -147,11 +148,11 @@ export class AppComponent implements OnInit {
   }
 
   inializeFCM() {
-    // this.firebase.getToken().then(token => {alert(token); this.token = token;});
-    this.firebaseX.onMessageReceived().subscribe(data => {
-      //var myJSON = JSON.stringify(data.title);
-      this.presentAlert(data.title, data.body);
-    });
+    // // this.firebase.getToken().then(token => {alert(token); this.token = token;});
+    // this.firebaseX.onMessageReceived().subscribe(data => {
+    //   //var myJSON = JSON.stringify(data.title);
+    //   this.presentAlert(data.title, data.body);
+    // });
   }
 
   async presentAlert(header, text) {

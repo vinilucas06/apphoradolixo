@@ -270,7 +270,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-split-pane contentId=\"main-content\">\n    <ion-menu contentId=\"main-content\" type=\"overlay\" *ngIf=\"this.usuario\">\n      <ion-content>\n        <ion-list id=\"inbox-list\">\n          <ion-list-header>e-coleta | Ecotres</ion-list-header>\n          <ion-note>{{this.usuario.user_email}}</ion-note>\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\n\n            <ion-item *ngIf=\"!(p.title == 'Suporte')\" (click)=\"selectedIndex = i\" [routerLink]=\"[p.url]\" lines=\"none\" detail=\"false\" [class.selected]=\"selectedIndex == i\">\n              <ion-icon color=\"success\" slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\n              <ion-label>{{ p.title }}</ion-label>\n              <!-- routerDirection=\"root\" -->\n            </ion-item>\n            <ion-item *ngIf=\"(p.title == 'Suporte')\" href=\"https://api.whatsapp.com/send?phone=553193567988\" lines=\"none\" detail=\"false\" [class.selected]=\"selectedIndex == i\">\n              <ion-icon color=\"success\" slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\n              <ion-label>{{ p.title }}</ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n\n        <!-- <ion-list id=\"labels-list\"> -->\n          <!-- <ion-list-header>Sistema</ion-list-header> -->\n\n          <!-- <ion-item *ngFor=\"let label of labels\" lines=\"none\"> -->\n            <!-- <ion-icon slot=\"start\" ios=\"bookmark-outline\" md=\"bookmark-sharp\"></ion-icon> -->\n            <!-- <ion-label>{{ label }}</ion-label> -->\n          <!-- </ion-item> -->\n        <!-- </ion-list> -->\n      </ion-content>\n      <ion-toolbar class=\"footer\">\n        <ion-footer>\n          <ion-button (click)=\"sair()\">Sair</ion-button>\n      </ion-footer>\n      </ion-toolbar>\n    </ion-menu>\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-split-pane contentId=\"main-content\">\n    <ion-menu contentId=\"main-content\" type=\"overlay\" *ngIf=\"this.usuario\">\n      <ion-content>\n        <ion-list id=\"inbox-list\">\n          <ion-list-header>e-coleta | Ecotres</ion-list-header>\n          <ion-note>{{this.usuario.user_email}}</ion-note>\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\n\n            <ion-item *ngIf=\"!(p.title == 'Suporte')\" (click)=\"selectedIndex = i\" [routerLink]=\"[p.url]\" lines=\"none\" detail=\"false\" [class.selected]=\"selectedIndex == i\">\n              <ion-icon color=\"success\" slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\n              <ion-label>{{ p.title }}</ion-label>\n              <!-- routerDirection=\"root\" -->\n            </ion-item>\n            <ion-item *ngIf=\"usuario.user_id != 578 && (p.title == 'Suporte')\" href=\"https://api.whatsapp.com/send?phone=553193567988\" lines=\"none\" detail=\"false\" [class.selected]=\"selectedIndex == i\">\n              <ion-icon color=\"success\" slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\n              <ion-label>{{ p.title }}</ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n\n        <!-- <ion-list id=\"labels-list\"> -->\n          <!-- <ion-list-header>Sistema</ion-list-header> -->\n\n          <!-- <ion-item *ngFor=\"let label of labels\" lines=\"none\"> -->\n            <!-- <ion-icon slot=\"start\" ios=\"bookmark-outline\" md=\"bookmark-sharp\"></ion-icon> -->\n            <!-- <ion-label>{{ label }}</ion-label> -->\n          <!-- </ion-item> -->\n        <!-- </ion-list> -->\n      </ion-content>\n      <ion-toolbar class=\"footer\">\n        <ion-footer>\n          <ion-button (click)=\"sair()\">Sair</ion-button>\n      </ion-footer>\n      </ion-toolbar>\n    </ion-menu>\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n");
 
 /***/ }),
 
@@ -283,7 +283,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-title>Cadastrar Endereço</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"dismissModal()\">Fechar</ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen [scrollEvents]=\"true\">\r\n  <ion-row>\r\n    <ion-col>\r\n      <ion-button color=\"primary\" (click)=\"getLocation()\">Pegar Localização Atual</ion-button>\r\n    </ion-col>\r\n  </ion-row>\r\n  <form class=\"\" [formGroup]=\"form\" (ngSubmit)=\"cadastrarEndereco(form.value)\">\r\n    <ion-item lines=\"full\">\r\n      <ion-label position=\"floating\">Nome</ion-label>\r\n      <ion-input type=\"text\" required formControlName=\"nome\"></ion-input>\r\n    </ion-item>\r\n\r\n\r\n    <ion-item lines=\"full\">\r\n      <ion-label position=\"floating\">CEP</ion-label>\r\n      <ion-input type=\"text\" required formControlName=\"cep\"></ion-input>\r\n    </ion-item>\r\n\r\n\r\n\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-button type=\"submit\" color=\"success\" expand=\"block\">Cadastrar</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n\r\n  </form>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-title>Cadastrar Endereço</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"dismissModal()\">Fechar</ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen overflow-scroll=\"true\">\r\n  <ion-row>\r\n    <ion-col>\r\n      <ion-button color=\"primary\" (click)=\"getLocation()\">Pegar Localização Atual</ion-button>\r\n    </ion-col>\r\n  </ion-row>\r\n  <form class=\"\" [formGroup]=\"form\" (ngSubmit)=\"cadastrarEndereco(form.value)\">\r\n    <ion-item lines=\"full\">\r\n      <ion-label position=\"floating\">Nome</ion-label>\r\n      <ion-input type=\"text\" required formControlName=\"nome\"></ion-input>\r\n    </ion-item>\r\n\r\n\r\n    <ion-item lines=\"full\">\r\n      <ion-label position=\"floating\">CEP</ion-label>\r\n      <ion-input type=\"text\" required formControlName=\"cep\"></ion-input>\r\n    </ion-item>\r\n\r\n\r\n\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-button type=\"submit\" color=\"success\" expand=\"block\">Cadastrar</ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n\r\n  </form>\r\n</ion-content>");
 
 /***/ }),
 
@@ -296,7 +296,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n    <ion-toolbar>\r\n        <ion-title>Recuperar Senha</ion-title>\r\n        <ion-buttons slot=\"end\">\r\n            <ion-button (click)=\"dismissModal()\">Fechar</ion-button>\r\n        </ion-buttons>\r\n    </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen [scrollEvents]=\"true\">\r\n    <form class=\"\" [formGroup]=\"form\" (ngSubmit)=\"esqueceuSenha(form.value)\">\r\n        <ion-item lines=\"full\">\r\n            <ion-label position=\"floating\">E-mail</ion-label>\r\n            <ion-input type=\"text\" required formControlName=\"email\"></ion-input>\r\n        </ion-item>\r\n        <ion-row>\r\n            <ion-col>\r\n                <ion-button type=\"submit\" color=\"success\" expand=\"block\">Recuperar Senha</ion-button>\r\n            </ion-col>\r\n        </ion-row>\r\n\r\n    </form>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n    <ion-toolbar>\r\n        <ion-title>Recuperar Senha</ion-title>\r\n        <ion-buttons slot=\"end\">\r\n            <ion-button (click)=\"dismissModal()\">Fechar</ion-button>\r\n        </ion-buttons>\r\n    </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen overflow-scroll=\"true\">\r\n    <form class=\"\" [formGroup]=\"form\" (ngSubmit)=\"esqueceuSenha(form.value)\">\r\n        <ion-item lines=\"full\">\r\n            <ion-label position=\"floating\">E-mail</ion-label>\r\n            <ion-input type=\"text\" required formControlName=\"email\"></ion-input>\r\n        </ion-item>\r\n        <ion-row>\r\n            <ion-col>\r\n                <ion-button type=\"submit\" color=\"success\" expand=\"block\">Recuperar Senha</ion-button>\r\n            </ion-col>\r\n        </ion-row>\r\n\r\n    </form>\r\n</ion-content>");
 
 /***/ }),
 
@@ -309,7 +309,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-back-button></ion-back-button>\r\n      </ion-buttons>\r\n      <ion-title>Cadastrar</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content fullscreen [scrollEvents]=\"true\">\r\n    <form class=\"\" [formGroup]=\"form\" (ngSubmit)=\"cadastrar(form.value)\">\r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">Nome</ion-label>\r\n        <ion-input type=\"text\" required formControlName=\"nome\"></ion-input>\r\n      </ion-item>\r\n\r\n       \r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">Telefone</ion-label>\r\n        <ion-input type=\"text\" required formControlName=\"telefone\"></ion-input>\r\n      </ion-item>\r\n       \r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">E-mail</ion-label>\r\n        <ion-input type=\"text\" required formControlName=\"email\"></ion-input>\r\n      </ion-item>\r\n  \r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">Senha</ion-label>\r\n        <ion-input type=\"password\" required formControlName=\"senha\"></ion-input>\r\n      </ion-item>\r\n  \r\n\r\n      <ion-row>\r\n        <ion-col>\r\n          <ion-button type=\"submit\" color=\"success\" expand=\"block\">Cadastrar</ion-button>\r\n        </ion-col>\r\n      </ion-row>\r\n\r\n    </form>\r\n  </ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-back-button></ion-back-button>\r\n      </ion-buttons>\r\n      <ion-title>Cadastrar</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content fullscreen overflow-scroll=\"true\">\r\n    <form class=\"\" [formGroup]=\"form\" (ngSubmit)=\"cadastrar(form.value)\">\r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">Nome</ion-label>\r\n        <ion-input type=\"text\" required formControlName=\"nome\"></ion-input>\r\n      </ion-item>\r\n\r\n       \r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">Telefone</ion-label>\r\n        <ion-input type=\"text\" required formControlName=\"telefone\"></ion-input>\r\n      </ion-item>\r\n       \r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">E-mail</ion-label>\r\n        <ion-input type=\"text\" required formControlName=\"email\"></ion-input>\r\n      </ion-item>\r\n  \r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">Senha</ion-label>\r\n        <ion-input type=\"password\" required formControlName=\"senha\"></ion-input>\r\n      </ion-item>\r\n  \r\n\r\n      <ion-row>\r\n        <ion-col>\r\n          <ion-button type=\"submit\" color=\"success\" expand=\"block\">Cadastrar</ion-button>\r\n        </ion-col>\r\n      </ion-row>\r\n\r\n    </form>\r\n  </ion-content>");
 
 /***/ }),
 
@@ -322,7 +322,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button></ion-menu-button>\r\n      </ion-buttons>\r\n      <ion-title>Configurações</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n<ion-content fullscreen [scrollEvents]=\"true\">\r\n    <form class=\"\" [formGroup]=\"form\" (ngSubmit)=\"alterar(form.value)\">\r\n        <ion-list>\r\n            <ion-item>\r\n                <ion-label>Receber notificações?</ion-label>\r\n                <ion-checkbox formControlName=\"receber\" slot=\"start\"></ion-checkbox>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox  formControlName=\"seg\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Segunda</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"ter\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Terça</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"qua\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Quarta</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"qui\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Quinta</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"sex\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Sexta</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"sab\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Sabado</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"dom\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Domingo</ion-label>\r\n            </ion-item>\r\n        </ion-list>\r\n        <ion-row>\r\n            <ion-col>\r\n              <ion-button type=\"submit\" color=\"success\" expand=\"block\">Confirmar</ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n    </form>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button></ion-menu-button>\r\n      </ion-buttons>\r\n      <ion-title>Configurações</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n<ion-content fullscreen overflow-scroll=\"true\">\r\n    <form class=\"\" [formGroup]=\"form\" (ngSubmit)=\"alterar(form.value)\">\r\n        <ion-list>\r\n            <ion-item>\r\n                <ion-label>Receber notificações?</ion-label>\r\n                <ion-checkbox formControlName=\"receber\" slot=\"start\"></ion-checkbox>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox  formControlName=\"seg\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Segunda</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"ter\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Terça</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"qua\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Quarta</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"qui\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Quinta</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"sex\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Sexta</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"sab\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Sabado</ion-label>\r\n            </ion-item>\r\n            <ion-item>\r\n                <ion-checkbox formControlName=\"dom\" slot=\"start\"></ion-checkbox>\r\n                <ion-label>Domingo</ion-label>\r\n            </ion-item>\r\n        </ion-list>\r\n        <ion-row>\r\n            <ion-col>\r\n              <ion-button type=\"submit\" color=\"success\" expand=\"block\">Confirmar</ion-button>\r\n            </ion-col>\r\n          </ion-row>\r\n    </form>\r\n</ion-content>");
 
 /***/ }),
 
@@ -335,7 +335,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>Ecotres</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n\r\n\r\n<ion-content fullscreen [scrollEvents]=\"true\">\r\n  <ion-button type=\"button\" color=\"success\" expand=\"block\" (click)=\"abrirSite()\">Abrir Site</ion-button>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>Ecotres</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n\r\n\r\n<ion-content fullscreen overflow-scroll=\"true\">\r\n  <ion-button type=\"button\" color=\"success\" expand=\"block\" (click)=\"abrirSite()\">Abrir Site</ion-button>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -348,7 +348,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("  <ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button></ion-menu-button>\r\n      </ion-buttons>\r\n      <ion-title>Histórico</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  <ion-content fullscreen [scrollEvents]=\"true\">\r\n  <ion-list no-lines>\r\n    <ion-item *ngFor=\"let hist of historicos\">\r\n      Caminhão chegou próximo de você! Dia : {{hist.history_date}}\r\n      <ion-button color=\"danger\" (click)=\"excluir(hist.history_id)\">Excluir</ion-button> \r\n    </ion-item>\r\n  </ion-list>\r\n\r\n  </ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("  <ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button></ion-menu-button>\r\n      </ion-buttons>\r\n      <ion-title>Histórico</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  <ion-content fullscreen overflow-scroll=\"true\">\r\n  <ion-list no-lines>\r\n    <ion-item *ngFor=\"let hist of historicos\">\r\n      Caminhão chegou próximo de você! Dia : {{hist.history_date}}\r\n      <ion-button color=\"danger\" (click)=\"excluir(hist.history_id)\">Excluir</ion-button> \r\n    </ion-item>\r\n  </ion-list>\r\n\r\n  </ion-content>");
 
 /***/ }),
 
@@ -361,7 +361,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>Notificações</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen [scrollEvents]=\"true\">\r\n  <ion-list no-lines>\r\n   \r\n    <ion-item *ngFor=\"let not of notificacoes\">\r\n      {{not.push_title}}\r\n        <br>\r\n      {{not.push_message}}\r\n      <ion-button color=\"danger\" (click)=\"excluir(not.push_id)\">Excluir</ion-button> \r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>Notificações</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen overflow-scroll=\"true\">\r\n  <ion-list no-lines>\r\n   \r\n    <ion-item *ngFor=\"let not of notificacoes\">\r\n      {{not.push_title}}\r\n        <br>\r\n      {{not.push_message}}\r\n      <ion-button color=\"danger\" (click)=\"excluir(not.push_id)\">Excluir</ion-button> \r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>");
 
 /***/ }),
 
@@ -374,7 +374,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content fullscreen [scrollEvents]=\"true\">\r\n  <div style=\"width: 100%; text-align: center;background-color: #4cb050;\">\r\n    <img alt=\"logo\" width=\"30%\" src=\"assets/imgs/icon_02.png\">\r\n  </div>\r\n  <hr>\r\n  <div style=\"width: 100%; text-align: center;\">Olá, seja bem vindo!</div>\r\n  <br>\r\n  <div style=\"width: 100%; text-align: center;\">Já possui o seu cadastro?</div>\r\n\r\n\r\n  <form [formGroup]=\"form\" (ngSubmit)=\"login(form.value)\">\r\n    <ion-item lines=\"full\">\r\n      <ion-label position=\"floating\">E-mail</ion-label>\r\n      <ion-input type=\"text\" required formControlName=\"login\"></ion-input>\r\n    </ion-item>\r\n    <ion-item lines=\"full\">\r\n      <ion-label position=\"floating\">Senha</ion-label>\r\n      <ion-input type=\"password\" required formControlName=\"password\"></ion-input>\r\n    </ion-item>\r\n\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-button type=\"submit\" color=\"success\" expand=\"block\">Entrar</ion-button>\r\n        <br>\r\n        <div style=\"width: 100%; text-align: center;\">\r\n          <a (click)=\"abrirEsqueceuSenha()\" class=\"small-text\">Esqueceu sua senha?</a>\r\n        </div>\r\n      </ion-col>\r\n    </ion-row>\r\n    <br>\r\n    <div style=\"width: 100%; text-align: center;\">\r\n      Ainda não possui seu cadastro?<br>\r\n      <a [routerLink]=\"['/cadastro']\" class=\"small-text\">Crie sua conta agora!</a>\r\n    </div>\r\n\r\n  </form>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content fullscreen overflow-scroll=\"true\">\r\n  <div style=\"width: 100%; text-align: center;background-color: #4cb050;\">\r\n    <img alt=\"logo\" width=\"30%\" src=\"assets/imgs/icon_02.png\">\r\n  </div>\r\n  <hr>\r\n  <div style=\"width: 100%; text-align: center;\">Olá, seja bem vindo!</div>\r\n  <br>\r\n  <div style=\"width: 100%; text-align: center;\">Já possui o seu cadastro?</div>\r\n\r\n\r\n  <form [formGroup]=\"form\" (ngSubmit)=\"login(form.value)\">\r\n    <ion-item lines=\"full\">\r\n      <ion-label position=\"floating\">E-mail</ion-label>\r\n      <ion-input type=\"text\" required formControlName=\"login\"></ion-input>\r\n    </ion-item>\r\n    <ion-item lines=\"full\">\r\n      <ion-label position=\"floating\">Senha</ion-label>\r\n      <ion-input type=\"password\" required formControlName=\"password\"></ion-input>\r\n    </ion-item>\r\n\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-button type=\"submit\" color=\"success\" expand=\"block\">Entrar</ion-button>\r\n        <br>\r\n        <div style=\"width: 100%; text-align: center;\">\r\n          <a (click)=\"abrirEsqueceuSenha()\" class=\"small-text\">Esqueceu sua senha?</a>\r\n        </div>\r\n      </ion-col>\r\n    </ion-row>\r\n    <br>\r\n    <div style=\"width: 100%; text-align: center;\">\r\n      Ainda não possui seu cadastro?<br>\r\n      <a [routerLink]=\"['/cadastro']\" class=\"small-text\">Crie sua conta agora!</a>\r\n    </div>\r\n\r\n  </form>\r\n</ion-content>");
 
 /***/ }),
 
@@ -387,7 +387,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("  <ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button></ion-menu-button>\r\n      </ion-buttons>\r\n      <ion-title>Meus Dados</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content fullscreen [scrollEvents]=\"true\">\r\n    <form class=\"\" [formGroup]=\"form\" (ngSubmit)=\"alterar(form.value)\">\r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">Nome</ion-label>\r\n        <ion-input type=\"text\" required formControlName=\"nome\"></ion-input>\r\n      </ion-item>\r\n\r\n       \r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">Telefone</ion-label>\r\n        <ion-input type=\"text\" required formControlName=\"telefone\"></ion-input>\r\n      </ion-item>\r\n       <h3>Endereços</h3>\r\n      <ion-list no-lines>\r\n        <ion-item *ngFor=\"let end of enderecos\">\r\n          {{end.addr_name}}<br>\r\n          {{end.addr_street}}\r\n          <ion-button color=\"danger\" (click)=\"excluirEndereco(end.addr_id)\">Excluir</ion-button> \r\n       <!-- {{end.Nome}}\r\n          <button> \r\n              <span style=\"text-transform: capitalize;\">Excluir</span> \r\n               (click)=\"excluirEndereco(end.id)\" \r\n          </button>   -->\r\n        </ion-item>\r\n      </ion-list>\r\n\r\n      <ion-row>\r\n        <ion-col>\r\n          <ion-button type=\"button\" color=\"success\" expand=\"block\" (click)=\"abrirModalEndereco()\">Cadastrar Endereço</ion-button>\r\n        </ion-col>\r\n      </ion-row>\r\n\r\n    </form>\r\n  </ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("  <ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button></ion-menu-button>\r\n      </ion-buttons>\r\n      <ion-title>Meus Dados</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  <ion-content fullscreen overflow-scroll=\"true\">\r\n    <form class=\"\" [formGroup]=\"form\" (ngSubmit)=\"alterar(form.value)\">\r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">Nome</ion-label>\r\n        <ion-input type=\"text\" required formControlName=\"nome\"></ion-input>\r\n      </ion-item>\r\n\r\n       \r\n      <ion-item lines=\"full\">\r\n        <ion-label position=\"floating\">Telefone</ion-label>\r\n        <ion-input type=\"text\" required formControlName=\"telefone\"></ion-input>\r\n      </ion-item>\r\n       <h3>Endereços</h3>\r\n      <ion-list no-lines>\r\n        <ion-item *ngFor=\"let end of enderecos\">\r\n          {{end.addr_name}}<br>\r\n          {{end.addr_street}}\r\n          <ion-button color=\"danger\" (click)=\"excluirEndereco(end.addr_id)\">Excluir</ion-button> \r\n       <!-- {{end.Nome}}\r\n          <button> \r\n              <span style=\"text-transform: capitalize;\">Excluir</span> \r\n               (click)=\"excluirEndereco(end.id)\" \r\n          </button>   -->\r\n        </ion-item>\r\n      </ion-list>\r\n\r\n      <ion-row>\r\n        <ion-col>\r\n          <ion-button type=\"button\" color=\"success\" expand=\"block\" (click)=\"abrirModalEndereco()\">Cadastrar Endereço</ion-button>\r\n        </ion-col>\r\n      </ion-row>\r\n\r\n    </form>\r\n  </ion-content>");
 
 /***/ }),
 
@@ -400,7 +400,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button></ion-menu-button>\r\n      </ion-buttons>\r\n      <ion-title>Suporte</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  \r\n  \r\n  <ion-content fullscreen [scrollEvents]=\"true\">\r\n    <a ion-button href=\"https://api.whatsapp.com/send?phone=553193567988\">SEND</a>\r\n    <ion-button type=\"button\" color=\"success\" expand=\"block\" (click)=\"abrirWhats()\">Enviar mensagem por WhatsApp</ion-button>\r\n  </ion-content>\r\n  \r\n ");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button></ion-menu-button>\r\n      </ion-buttons>\r\n      <ion-title>Suporte</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  \r\n  \r\n  \r\n  <ion-content fullscreen overflow-scroll=\"true\">\r\n    <a ion-button href=\"https://api.whatsapp.com/send?phone=553193567988\">SEND</a>\r\n    <ion-button type=\"button\" color=\"success\" expand=\"block\" (click)=\"abrirWhats()\">Enviar mensagem por WhatsApp</ion-button>\r\n  </ion-content>\r\n  \r\n ");
 
 /***/ }),
 
@@ -483,7 +483,7 @@ AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-menu ion-content {\n  --background: var(--ion-item-background, var(--ion-background-color, #fff));\n}\n\nion-menu.md ion-content {\n  --padding-start: 8px;\n  --padding-end: 8px;\n  --padding-top: 20px;\n  --padding-bottom: 20px;\n}\n\nion-menu.md ion-list {\n  padding: 20px 0;\n}\n\nion-menu.md ion-note {\n  margin-bottom: 30px;\n}\n\nion-menu.md ion-list-header,\nion-menu.md ion-note {\n  padding-left: 10px;\n}\n\nion-menu.md ion-list#inbox-list {\n  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);\n}\n\nion-menu.md ion-list#inbox-list ion-list-header {\n  font-size: 22px;\n  font-weight: 600;\n  min-height: 20px;\n}\n\nion-menu.md ion-list#labels-list ion-list-header {\n  font-size: 16px;\n  margin-bottom: 18px;\n  color: #757575;\n  min-height: 26px;\n}\n\nion-menu.md ion-item {\n  --padding-start: 10px;\n  --padding-end: 10px;\n  border-radius: 4px;\n}\n\nion-menu.md ion-item.selected {\n  --background: rgba(var(--ion-color-primary-rgb), 0.14);\n}\n\nion-menu.md ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.md ion-item ion-icon {\n  color: #616e7e;\n}\n\nion-menu.md ion-item ion-label {\n  font-weight: 500;\n}\n\nion-menu.ios ion-content {\n  --padding-bottom: 20px;\n}\n\nion-menu.ios ion-list {\n  padding: 20px 0 0 0;\n}\n\nion-menu.ios ion-note {\n  line-height: 24px;\n  margin-bottom: 20px;\n}\n\nion-menu.ios ion-item {\n  --padding-start: 16px;\n  --padding-end: 16px;\n  --min-height: 50px;\n}\n\nion-menu.ios ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.ios ion-item ion-icon {\n  font-size: 24px;\n  color: #73849a;\n}\n\nion-menu.ios ion-list#labels-list ion-list-header {\n  margin-bottom: 8px;\n}\n\nion-menu.ios ion-list-header,\nion-menu.ios ion-note {\n  padding-left: 16px;\n  padding-right: 16px;\n}\n\nion-menu.ios ion-note {\n  margin-bottom: 8px;\n}\n\nion-note {\n  display: inline-block;\n  font-size: 16px;\n  color: var(--ion-color-medium-shade);\n}\n\nion-item.selected {\n  --color: var(--ion-color-primary);\n}\n\nion-toolbar.footer {\n  --background: #4cb050;\n  text-align: center;\n}\n\nion-button {\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxMdWNhc1xcRG9jdW1lbnRzXFxQcm9qZXRvc1xcaG9yYS1kby1saXhvXFxhcHAyXFxhcHAyL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLDJFQUFBO0FDQ0Y7O0FERUE7RUFDRSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxzQkFBQTtBQ0NGOztBREVBO0VBQ0UsZUFBQTtBQ0NGOztBREVBO0VBQ0UsbUJBQUE7QUNDRjs7QURFQTs7RUFFRSxrQkFBQTtBQ0NGOztBREVBO0VBQ0UsMkRBQUE7QUNDRjs7QURFQTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUVBLGdCQUFBO0FDQUY7O0FER0E7RUFDRSxlQUFBO0VBRUEsbUJBQUE7RUFFQSxjQUFBO0VBRUEsZ0JBQUE7QUNIRjs7QURNQTtFQUNFLHFCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtBQ0hGOztBRE1BO0VBQ0Usc0RBQUE7QUNIRjs7QURNQTtFQUNFLCtCQUFBO0FDSEY7O0FETUE7RUFDRSxjQUFBO0FDSEY7O0FETUE7RUFDRSxnQkFBQTtBQ0hGOztBRE1BO0VBQ0Usc0JBQUE7QUNIRjs7QURNQTtFQUNFLG1CQUFBO0FDSEY7O0FETUE7RUFDRSxpQkFBQTtFQUNBLG1CQUFBO0FDSEY7O0FETUE7RUFDRSxxQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUNIRjs7QURNQTtFQUNFLCtCQUFBO0FDSEY7O0FETUE7RUFDRSxlQUFBO0VBQ0EsY0FBQTtBQ0hGOztBRE1BO0VBQ0Usa0JBQUE7QUNIRjs7QURNQTs7RUFFRSxrQkFBQTtFQUNBLG1CQUFBO0FDSEY7O0FETUE7RUFDRSxrQkFBQTtBQ0hGOztBRE1BO0VBQ0UscUJBQUE7RUFDQSxlQUFBO0VBRUEsb0NBQUE7QUNKRjs7QURPQTtFQUNFLGlDQUFBO0FDSkY7O0FET0E7RUFDRSxxQkFBQTtFQUNBLGtCQUFBO0FDSkY7O0FETUE7RUFDRSxxQkFBQTtBQ0hGIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLW1lbnUgaW9uLWNvbnRlbnQge1xuICAtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1pdGVtLWJhY2tncm91bmQsIHZhcigtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yLCAjZmZmKSk7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1jb250ZW50IHtcbiAgLS1wYWRkaW5nLXN0YXJ0OiA4cHg7XG4gIC0tcGFkZGluZy1lbmQ6IDhweDtcbiAgLS1wYWRkaW5nLXRvcDogMjBweDtcbiAgLS1wYWRkaW5nLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3Qge1xuICBwYWRkaW5nOiAyMHB4IDA7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1ub3RlIHtcbiAgbWFyZ2luLWJvdHRvbTogMzBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QtaGVhZGVyLFxuaW9uLW1lbnUubWQgaW9uLW5vdGUge1xuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1saXN0I2luYm94LWxpc3Qge1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgdmFyKC0taW9uLWNvbG9yLXN0ZXAtMTUwLCAjZDdkOGRhKTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjaW5ib3gtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBmb250LXNpemU6IDIycHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG5cbiAgbWluLWhlaWdodDogMjBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjbGFiZWxzLWxpc3QgaW9uLWxpc3QtaGVhZGVyIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuXG4gIG1hcmdpbi1ib3R0b206IDE4cHg7XG5cbiAgY29sb3I6ICM3NTc1NzU7XG5cbiAgbWluLWhlaWdodDogMjZweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0ge1xuICAtLXBhZGRpbmctc3RhcnQ6IDEwcHg7XG4gIC0tcGFkZGluZy1lbmQ6IDEwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQge1xuICAtLWJhY2tncm91bmQ6IHJnYmEodmFyKC0taW9uLWNvbG9yLXByaW1hcnktcmdiKSwgMC4xNCk7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1pdGVtLnNlbGVjdGVkIGlvbi1pY29uIHtcbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0gaW9uLWljb24ge1xuICBjb2xvcjogIzYxNmU3ZTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0gaW9uLWxhYmVsIHtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1jb250ZW50IHtcbiAgLS1wYWRkaW5nLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1saXN0IHtcbiAgcGFkZGluZzogMjBweCAwIDAgMDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcbiAgbGluZS1oZWlnaHQ6IDI0cHg7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbSB7XG4gIC0tcGFkZGluZy1zdGFydDogMTZweDtcbiAgLS1wYWRkaW5nLWVuZDogMTZweDtcbiAgLS1taW4taGVpZ2h0OiA1MHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0uc2VsZWN0ZWQgaW9uLWljb24ge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0gaW9uLWljb24ge1xuICBmb250LXNpemU6IDI0cHg7XG4gIGNvbG9yOiAjNzM4NDlhO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3QjbGFiZWxzLWxpc3QgaW9uLWxpc3QtaGVhZGVyIHtcbiAgbWFyZ2luLWJvdHRvbTogOHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3QtaGVhZGVyLFxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcbiAgcGFkZGluZy1sZWZ0OiAxNnB4O1xuICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBtYXJnaW4tYm90dG9tOiA4cHg7XG59XG5cbmlvbi1ub3RlIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LXNpemU6IDE2cHg7XG5cbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1tZWRpdW0tc2hhZGUpO1xufVxuXG5pb24taXRlbS5zZWxlY3RlZCB7XG4gIC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbn1cblxuaW9uLXRvb2xiYXIuZm9vdGVyIHtcbiAgLS1iYWNrZ3JvdW5kOiAjNGNiMDUwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5pb24tYnV0dG9uIHtcbiAgLS1iYWNrZ3JvdW5kOiAjNGNiMDUwO1xuICB9IiwiaW9uLW1lbnUgaW9uLWNvbnRlbnQge1xuICAtLWJhY2tncm91bmQ6IHZhcigtLWlvbi1pdGVtLWJhY2tncm91bmQsIHZhcigtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yLCAjZmZmKSk7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1jb250ZW50IHtcbiAgLS1wYWRkaW5nLXN0YXJ0OiA4cHg7XG4gIC0tcGFkZGluZy1lbmQ6IDhweDtcbiAgLS1wYWRkaW5nLXRvcDogMjBweDtcbiAgLS1wYWRkaW5nLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3Qge1xuICBwYWRkaW5nOiAyMHB4IDA7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1ub3RlIHtcbiAgbWFyZ2luLWJvdHRvbTogMzBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QtaGVhZGVyLFxuaW9uLW1lbnUubWQgaW9uLW5vdGUge1xuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1saXN0I2luYm94LWxpc3Qge1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgdmFyKC0taW9uLWNvbG9yLXN0ZXAtMTUwLCAjZDdkOGRhKTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjaW5ib3gtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBmb250LXNpemU6IDIycHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIG1pbi1oZWlnaHQ6IDIwcHg7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1saXN0I2xhYmVscy1saXN0IGlvbi1saXN0LWhlYWRlciB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbWFyZ2luLWJvdHRvbTogMThweDtcbiAgY29sb3I6ICM3NTc1NzU7XG4gIG1pbi1oZWlnaHQ6IDI2cHg7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1pdGVtIHtcbiAgLS1wYWRkaW5nLXN0YXJ0OiAxMHB4O1xuICAtLXBhZGRpbmctZW5kOiAxMHB4O1xuICBib3JkZXItcmFkaXVzOiA0cHg7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1pdGVtLnNlbGVjdGVkIHtcbiAgLS1iYWNrZ3JvdW5kOiByZ2JhKHZhcigtLWlvbi1jb2xvci1wcmltYXJ5LXJnYiksIDAuMTQpO1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbS5zZWxlY3RlZCBpb24taWNvbiB7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1pdGVtIGlvbi1pY29uIHtcbiAgY29sb3I6ICM2MTZlN2U7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1pdGVtIGlvbi1sYWJlbCB7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tY29udGVudCB7XG4gIC0tcGFkZGluZy1ib3R0b206IDIwcHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbGlzdCB7XG4gIHBhZGRpbmc6IDIwcHggMCAwIDA7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbm90ZSB7XG4gIGxpbmUtaGVpZ2h0OiAyNHB4O1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0ge1xuICAtLXBhZGRpbmctc3RhcnQ6IDE2cHg7XG4gIC0tcGFkZGluZy1lbmQ6IDE2cHg7XG4gIC0tbWluLWhlaWdodDogNTBweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1pdGVtLnNlbGVjdGVkIGlvbi1pY29uIHtcbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1pdGVtIGlvbi1pY29uIHtcbiAgZm9udC1zaXplOiAyNHB4O1xuICBjb2xvcjogIzczODQ5YTtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1saXN0I2xhYmVscy1saXN0IGlvbi1saXN0LWhlYWRlciB7XG4gIG1hcmdpbi1ib3R0b206IDhweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1saXN0LWhlYWRlcixcbmlvbi1tZW51LmlvcyBpb24tbm90ZSB7XG4gIHBhZGRpbmctbGVmdDogMTZweDtcbiAgcGFkZGluZy1yaWdodDogMTZweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcbiAgbWFyZ2luLWJvdHRvbTogOHB4O1xufVxuXG5pb24tbm90ZSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgZm9udC1zaXplOiAxNnB4O1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLW1lZGl1bS1zaGFkZSk7XG59XG5cbmlvbi1pdGVtLnNlbGVjdGVkIHtcbiAgLS1jb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuXG5pb24tdG9vbGJhci5mb290ZXIge1xuICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuaW9uLWJ1dHRvbiB7XG4gIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-menu ion-content {\n  --background: var(--ion-item-background, var(--ion-background-color, #fff));\n}\n\nion-menu.md ion-content {\n  --padding-start: 8px;\n  --padding-end: 8px;\n  --padding-top: 20px;\n  --padding-bottom: 20px;\n}\n\nion-menu.md ion-list {\n  padding: 20px 0;\n}\n\nion-menu.md ion-note {\n  margin-bottom: 30px;\n}\n\nion-menu.md ion-list-header,\nion-menu.md ion-note {\n  padding-left: 10px;\n}\n\nion-menu.md ion-list#inbox-list {\n  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);\n}\n\nion-menu.md ion-list#inbox-list ion-list-header {\n  font-size: 22px;\n  font-weight: 600;\n  min-height: 20px;\n}\n\nion-menu.md ion-list#labels-list ion-list-header {\n  font-size: 16px;\n  margin-bottom: 18px;\n  color: #757575;\n  min-height: 26px;\n}\n\nion-menu.md ion-item {\n  --padding-start: 10px;\n  --padding-end: 10px;\n  border-radius: 4px;\n}\n\nion-menu.md ion-item.selected {\n  --background: rgba(var(--ion-color-primary-rgb), 0.14);\n}\n\nion-menu.md ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.md ion-item ion-icon {\n  color: #616e7e;\n}\n\nion-menu.md ion-item ion-label {\n  font-weight: 500;\n}\n\nion-menu.ios ion-content {\n  --padding-bottom: 20px;\n}\n\nion-menu.ios ion-list {\n  padding: 20px 0 0 0;\n}\n\nion-menu.ios ion-note {\n  line-height: 24px;\n  margin-bottom: 20px;\n}\n\nion-menu.ios ion-item {\n  --padding-start: 16px;\n  --padding-end: 16px;\n  --min-height: 50px;\n}\n\nion-menu.ios ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.ios ion-item ion-icon {\n  font-size: 24px;\n  color: #73849a;\n}\n\nion-menu.ios ion-list#labels-list ion-list-header {\n  margin-bottom: 8px;\n}\n\nion-menu.ios ion-list-header,\nion-menu.ios ion-note {\n  padding-left: 16px;\n  padding-right: 16px;\n}\n\nion-menu.ios ion-note {\n  margin-bottom: 8px;\n}\n\nion-note {\n  display: inline-block;\n  font-size: 16px;\n  color: var(--ion-color-medium-shade);\n}\n\nion-item.selected {\n  --color: var(--ion-color-primary);\n}\n\nion-toolbar.footer {\n  --background: #4cb050;\n  text-align: center;\n}\n\nion-button {\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxMdWNhc1xcRG9jdW1lbnRzXFxQcm9qZXRvc1xcaG9yYS1kby1saXhvXFxhcHAyXFxpb3Mvc3JjXFxhcHBcXGFwcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMkVBQUE7QUNDRjs7QURFQTtFQUNFLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLHNCQUFBO0FDQ0Y7O0FERUE7RUFDRSxlQUFBO0FDQ0Y7O0FERUE7RUFDRSxtQkFBQTtBQ0NGOztBREVBOztFQUVFLGtCQUFBO0FDQ0Y7O0FERUE7RUFDRSwyREFBQTtBQ0NGOztBREVBO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0VBRUEsZ0JBQUE7QUNBRjs7QURHQTtFQUNFLGVBQUE7RUFFQSxtQkFBQTtFQUVBLGNBQUE7RUFFQSxnQkFBQTtBQ0hGOztBRE1BO0VBQ0UscUJBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FDSEY7O0FETUE7RUFDRSxzREFBQTtBQ0hGOztBRE1BO0VBQ0UsK0JBQUE7QUNIRjs7QURNQTtFQUNFLGNBQUE7QUNIRjs7QURNQTtFQUNFLGdCQUFBO0FDSEY7O0FETUE7RUFDRSxzQkFBQTtBQ0hGOztBRE1BO0VBQ0UsbUJBQUE7QUNIRjs7QURNQTtFQUNFLGlCQUFBO0VBQ0EsbUJBQUE7QUNIRjs7QURNQTtFQUNFLHFCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtBQ0hGOztBRE1BO0VBQ0UsK0JBQUE7QUNIRjs7QURNQTtFQUNFLGVBQUE7RUFDQSxjQUFBO0FDSEY7O0FETUE7RUFDRSxrQkFBQTtBQ0hGOztBRE1BOztFQUVFLGtCQUFBO0VBQ0EsbUJBQUE7QUNIRjs7QURNQTtFQUNFLGtCQUFBO0FDSEY7O0FETUE7RUFDRSxxQkFBQTtFQUNBLGVBQUE7RUFFQSxvQ0FBQTtBQ0pGOztBRE9BO0VBQ0UsaUNBQUE7QUNKRjs7QURPQTtFQUNFLHFCQUFBO0VBQ0Esa0JBQUE7QUNKRjs7QURNQTtFQUNFLHFCQUFBO0FDSEYiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tbWVudSBpb24tY29udGVudCB7XG4gIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWl0ZW0tYmFja2dyb3VuZCwgdmFyKC0taW9uLWJhY2tncm91bmQtY29sb3IsICNmZmYpKTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWNvbnRlbnQge1xuICAtLXBhZGRpbmctc3RhcnQ6IDhweDtcbiAgLS1wYWRkaW5nLWVuZDogOHB4O1xuICAtLXBhZGRpbmctdG9wOiAyMHB4O1xuICAtLXBhZGRpbmctYm90dG9tOiAyMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCB7XG4gIHBhZGRpbmc6IDIwcHggMDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLW5vdGUge1xuICBtYXJnaW4tYm90dG9tOiAzMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdC1oZWFkZXIsXG5pb24tbWVudS5tZCBpb24tbm90ZSB7XG4gIHBhZGRpbmctbGVmdDogMTBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjaW5ib3gtbGlzdCB7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCB2YXIoLS1pb24tY29sb3Itc3RlcC0xNTAsICNkN2Q4ZGEpO1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCNpbmJveC1saXN0IGlvbi1saXN0LWhlYWRlciB7XG4gIGZvbnQtc2l6ZTogMjJweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcblxuICBtaW4taGVpZ2h0OiAyMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCNsYWJlbHMtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBmb250LXNpemU6IDE2cHg7XG5cbiAgbWFyZ2luLWJvdHRvbTogMThweDtcblxuICBjb2xvcjogIzc1NzU3NTtcblxuICBtaW4taGVpZ2h0OiAyNnB4O1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSB7XG4gIC0tcGFkZGluZy1zdGFydDogMTBweDtcbiAgLS1wYWRkaW5nLWVuZDogMTBweDtcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbS5zZWxlY3RlZCB7XG4gIC0tYmFja2dyb3VuZDogcmdiYSh2YXIoLS1pb24tY29sb3ItcHJpbWFyeS1yZ2IpLCAwLjE0KTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQgaW9uLWljb24ge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSBpb24taWNvbiB7XG4gIGNvbG9yOiAjNjE2ZTdlO1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSBpb24tbGFiZWwge1xuICBmb250LXdlaWdodDogNTAwO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWNvbnRlbnQge1xuICAtLXBhZGRpbmctYm90dG9tOiAyMHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3Qge1xuICBwYWRkaW5nOiAyMHB4IDAgMCAwO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBsaW5lLWhlaWdodDogMjRweDtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1pdGVtIHtcbiAgLS1wYWRkaW5nLXN0YXJ0OiAxNnB4O1xuICAtLXBhZGRpbmctZW5kOiAxNnB4O1xuICAtLW1pbi1oZWlnaHQ6IDUwcHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbS5zZWxlY3RlZCBpb24taWNvbiB7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbSBpb24taWNvbiB7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgY29sb3I6ICM3Mzg0OWE7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbGlzdCNsYWJlbHMtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBtYXJnaW4tYm90dG9tOiA4cHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbGlzdC1oZWFkZXIsXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBwYWRkaW5nLWxlZnQ6IDE2cHg7XG4gIHBhZGRpbmctcmlnaHQ6IDE2cHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbm90ZSB7XG4gIG1hcmdpbi1ib3R0b206IDhweDtcbn1cblxuaW9uLW5vdGUge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZvbnQtc2l6ZTogMTZweDtcblxuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLW1lZGl1bS1zaGFkZSk7XG59XG5cbmlvbi1pdGVtLnNlbGVjdGVkIHtcbiAgLS1jb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuXG5pb24tdG9vbGJhci5mb290ZXIge1xuICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbmlvbi1idXR0b24ge1xuICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XG4gIH0iLCJpb24tbWVudSBpb24tY29udGVudCB7XG4gIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWl0ZW0tYmFja2dyb3VuZCwgdmFyKC0taW9uLWJhY2tncm91bmQtY29sb3IsICNmZmYpKTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWNvbnRlbnQge1xuICAtLXBhZGRpbmctc3RhcnQ6IDhweDtcbiAgLS1wYWRkaW5nLWVuZDogOHB4O1xuICAtLXBhZGRpbmctdG9wOiAyMHB4O1xuICAtLXBhZGRpbmctYm90dG9tOiAyMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCB7XG4gIHBhZGRpbmc6IDIwcHggMDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLW5vdGUge1xuICBtYXJnaW4tYm90dG9tOiAzMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdC1oZWFkZXIsXG5pb24tbWVudS5tZCBpb24tbm90ZSB7XG4gIHBhZGRpbmctbGVmdDogMTBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjaW5ib3gtbGlzdCB7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCB2YXIoLS1pb24tY29sb3Itc3RlcC0xNTAsICNkN2Q4ZGEpO1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCNpbmJveC1saXN0IGlvbi1saXN0LWhlYWRlciB7XG4gIGZvbnQtc2l6ZTogMjJweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgbWluLWhlaWdodDogMjBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjbGFiZWxzLWxpc3QgaW9uLWxpc3QtaGVhZGVyIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBtYXJnaW4tYm90dG9tOiAxOHB4O1xuICBjb2xvcjogIzc1NzU3NTtcbiAgbWluLWhlaWdodDogMjZweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0ge1xuICAtLXBhZGRpbmctc3RhcnQ6IDEwcHg7XG4gIC0tcGFkZGluZy1lbmQ6IDEwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQge1xuICAtLWJhY2tncm91bmQ6IHJnYmEodmFyKC0taW9uLWNvbG9yLXByaW1hcnktcmdiKSwgMC4xNCk7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1pdGVtLnNlbGVjdGVkIGlvbi1pY29uIHtcbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0gaW9uLWljb24ge1xuICBjb2xvcjogIzYxNmU3ZTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0gaW9uLWxhYmVsIHtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1jb250ZW50IHtcbiAgLS1wYWRkaW5nLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1saXN0IHtcbiAgcGFkZGluZzogMjBweCAwIDAgMDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcbiAgbGluZS1oZWlnaHQ6IDI0cHg7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbSB7XG4gIC0tcGFkZGluZy1zdGFydDogMTZweDtcbiAgLS1wYWRkaW5nLWVuZDogMTZweDtcbiAgLS1taW4taGVpZ2h0OiA1MHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0uc2VsZWN0ZWQgaW9uLWljb24ge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0gaW9uLWljb24ge1xuICBmb250LXNpemU6IDI0cHg7XG4gIGNvbG9yOiAjNzM4NDlhO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3QjbGFiZWxzLWxpc3QgaW9uLWxpc3QtaGVhZGVyIHtcbiAgbWFyZ2luLWJvdHRvbTogOHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3QtaGVhZGVyLFxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcbiAgcGFkZGluZy1sZWZ0OiAxNnB4O1xuICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBtYXJnaW4tYm90dG9tOiA4cHg7XG59XG5cbmlvbi1ub3RlIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItbWVkaXVtLXNoYWRlKTtcbn1cblxuaW9uLWl0ZW0uc2VsZWN0ZWQge1xuICAtLWNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XG59XG5cbmlvbi10b29sYmFyLmZvb3RlciB7XG4gIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG5pb24tYnV0dG9uIHtcbiAgLS1iYWNrZ3JvdW5kOiAjNGNiMDUwO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -505,7 +505,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _services_auth_authentication_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/auth/authentication.service */ "./src/app/services/auth/authentication.service.ts");
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _ionic_native_firebase_x_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/firebase-x/ngx */ "./node_modules/@ionic-native/firebase-x/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_firebase_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/firebase/ngx */ "./node_modules/@ionic-native/firebase/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "./node_modules/@ionic-native/geolocation/__ivy_ngcc__/ngx/index.js");
 
 
@@ -515,11 +515,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import { FirebaseX } from '@ionic-native/firebase-x/ngx';
 
 
 //import { FCM } from '@ionic-native/fcm/ngx';
 let AppComponent = class AppComponent {
-    constructor(platform, splashScreen, statusBar, router, routerComponent, auth, iab, firebase, alertController, geolocation) {
+    constructor(platform, splashScreen, statusBar, router, routerComponent, auth, iab, 
+    // public firebaseX: FirebaseX,
+    firebase, alertController, geolocation, menuCtrl) {
         this.platform = platform;
         this.splashScreen = splashScreen;
         this.statusBar = statusBar;
@@ -530,6 +533,7 @@ let AppComponent = class AppComponent {
         this.firebase = firebase;
         this.alertController = alertController;
         this.geolocation = geolocation;
+        this.menuCtrl = menuCtrl;
         this.selectedIndex = 0;
         this.appPages = [
             {
@@ -594,6 +598,7 @@ let AppComponent = class AppComponent {
                 this.routerComponent.navigate(['/login']);
             }
             this.inializeFCM();
+            this.iniciarListenerDeNotificacoes();
             this.inializeGeo();
         });
     }
@@ -608,10 +613,21 @@ let AppComponent = class AppComponent {
     }
     sair() {
         //this.auth.logout();
-        localStorage.removeItem('user');
-        //App.exitApp();
-        navigator['app'].exitApp();
-        //this.routerComponent.navigate(['/login']);
+        if (this.usuario.user_id != 741) {
+            localStorage.removeItem('user');
+            this.menuCtrl.toggle();
+            //App.exitApp();
+            //navigator['app'].exitApp();
+            this.routerComponent.navigate(['/login']);
+        }
+        else {
+            alert("inicio");
+            this.firebase.getToken().then(token => {
+                alert(token);
+            }, (error) => {
+                alert(error);
+            });
+        }
     }
     inializeGeo() {
         this.geolocation.getCurrentPosition().then((resp) => {
@@ -620,11 +636,11 @@ let AppComponent = class AppComponent {
         });
     }
     inializeFCM() {
-        // this.firebase.getToken().then(token => {alert(token); this.token = token;});
-        this.firebase.onMessageReceived().subscribe(data => {
-            //var myJSON = JSON.stringify(data.title);
-            this.presentAlert(data.title, data.body);
-        });
+        // // this.firebase.getToken().then(token => {alert(token); this.token = token;});
+        // this.firebaseX.onMessageReceived().subscribe(data => {
+        //   //var myJSON = JSON.stringify(data.title);
+        //   this.presentAlert(data.title, data.body);
+        // });
     }
     presentAlert(header, text) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -636,6 +652,20 @@ let AppComponent = class AppComponent {
             yield alert.present();
         });
     }
+    solicitarTokenDoFirebase() {
+        this.firebase.getToken()
+            .then(token => {
+            this.iniciarListenerDeNotificacoes();
+        }) // save the token server-side and use it to push notifications to this device
+            .catch(error => {
+            console.error('Error getting token', error);
+        });
+    }
+    iniciarListenerDeNotificacoes() {
+        this.firebase.onNotificationOpen().subscribe((notification) => {
+            this.presentAlert(notification.title, notification.body);
+        });
+    }
 };
 AppComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"] },
@@ -645,9 +675,10 @@ AppComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
     { type: _services_auth_authentication_service__WEBPACK_IMPORTED_MODULE_6__["AuthenticationService"] },
     { type: _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_7__["InAppBrowser"] },
-    { type: _ionic_native_firebase_x_ngx__WEBPACK_IMPORTED_MODULE_8__["FirebaseX"] },
+    { type: _ionic_native_firebase_ngx__WEBPACK_IMPORTED_MODULE_8__["Firebase"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] },
-    { type: _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_9__["Geolocation"] }
+    { type: _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_9__["Geolocation"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"] }
 ];
 AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -692,10 +723,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-/* harmony import */ var _ionic_native_firebase_x_ngx__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @ionic-native/firebase-x/ngx */ "./node_modules/@ionic-native/firebase-x/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "./node_modules/@ionic-native/geolocation/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _modals_esqueceusenha_esqueceusenha__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modals/esqueceusenha/esqueceusenha */ "./src/app/modals/esqueceusenha/esqueceusenha.ts");
-/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "./node_modules/@fortawesome/angular-fontawesome/__ivy_ngcc__/fesm2015/angular-fontawesome.js");
+/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "./node_modules/@ionic-native/geolocation/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _modals_esqueceusenha_esqueceusenha__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modals/esqueceusenha/esqueceusenha */ "./src/app/modals/esqueceusenha/esqueceusenha.ts");
+/* harmony import */ var _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @fortawesome/angular-fontawesome */ "./node_modules/@fortawesome/angular-fontawesome/__ivy_ngcc__/fesm2015/angular-fontawesome.js");
+/* harmony import */ var _ionic_native_firebase_ngx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @ionic-native/firebase/ngx */ "./node_modules/@ionic-native/firebase/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.es.js");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
 
@@ -719,6 +750,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//import { FirebaseX } from "@ionic-native/firebase-x/ngx";
 
 
 
@@ -735,7 +767,7 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _pages_cadastro_cadastro__WEBPACK_IMPORTED_MODULE_10__["CadastroPage"],
             _pages_meusdados_meusdados__WEBPACK_IMPORTED_MODULE_11__["MeusDadosPage"],
             _modals_endereco_endereco__WEBPACK_IMPORTED_MODULE_12__["EnderecoModal"],
-            _modals_esqueceusenha_esqueceusenha__WEBPACK_IMPORTED_MODULE_23__["EsqueceuSenhaModal"],
+            _modals_esqueceusenha_esqueceusenha__WEBPACK_IMPORTED_MODULE_22__["EsqueceuSenhaModal"],
             _pages_historiconotificacao_historiconotificacao__WEBPACK_IMPORTED_MODULE_13__["HistoricoNotificacaoPage"],
             _pages_historico_historico__WEBPACK_IMPORTED_MODULE_14__["HistoricoPage"],
             _pages_confignotificacao_confignotificacao__WEBPACK_IMPORTED_MODULE_15__["ConfigNotificacaoPage"],
@@ -748,14 +780,15 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_19__["HttpClientModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormsModule"],
-            _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_24__["FontAwesomeModule"],
+            _fortawesome_angular_fontawesome__WEBPACK_IMPORTED_MODULE_23__["FontAwesomeModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_20__["ReactiveFormsModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]
         ],
         providers: [
-            _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_22__["Geolocation"],
-            _ionic_native_firebase_x_ngx__WEBPACK_IMPORTED_MODULE_21__["FirebaseX"],
+            _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_21__["Geolocation"],
+            _ionic_native_firebase_ngx__WEBPACK_IMPORTED_MODULE_24__["Firebase"],
+            //FirebaseX,
             _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_18__["InAppBrowser"],
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
@@ -935,7 +968,7 @@ EnderecoModal = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".button-verde {\n  background-color: #8bc53f;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL2VzcXVlY2V1c2VuaGEvQzpcXFVzZXJzXFxMdWNhc1xcRG9jdW1lbnRzXFxQcm9qZXRvc1xcaG9yYS1kby1saXhvXFxhcHAyXFxhcHAyL3NyY1xcYXBwXFxtb2RhbHNcXGVzcXVlY2V1c2VuaGFcXGVzcXVlY2V1c2VuaGEuc2NzcyIsInNyYy9hcHAvbW9kYWxzL2VzcXVlY2V1c2VuaGEvZXNxdWVjZXVzZW5oYS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kseUJBQUE7RUFDQSxrQkFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvbW9kYWxzL2VzcXVlY2V1c2VuaGEvZXNxdWVjZXVzZW5oYS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJ1dHRvbi12ZXJkZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjOGJjNTNmO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG5cclxufSIsIi5idXR0b24tdmVyZGUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjOGJjNTNmO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".button-verde {\n  background-color: #8bc53f;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWxzL2VzcXVlY2V1c2VuaGEvQzpcXFVzZXJzXFxMdWNhc1xcRG9jdW1lbnRzXFxQcm9qZXRvc1xcaG9yYS1kby1saXhvXFxhcHAyXFxpb3Mvc3JjXFxhcHBcXG1vZGFsc1xcZXNxdWVjZXVzZW5oYVxcZXNxdWVjZXVzZW5oYS5zY3NzIiwic3JjL2FwcC9tb2RhbHMvZXNxdWVjZXVzZW5oYS9lc3F1ZWNldXNlbmhhLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx5QkFBQTtFQUNBLGtCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9tb2RhbHMvZXNxdWVjZXVzZW5oYS9lc3F1ZWNldXNlbmhhLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYnV0dG9uLXZlcmRlIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM4YmM1M2Y7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblxyXG59IiwiLmJ1dHRvbi12ZXJkZSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM4YmM1M2Y7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn0iXX0= */");
 
 /***/ }),
 
@@ -973,9 +1006,16 @@ let EsqueceuSenhaModal = class EsqueceuSenhaModal {
     }
     esqueceuSenha(form) {
         this.authenticationService.EsqueceuSenha(form.email).subscribe(res => {
-            this.presentAlert("Atenção", "Senha enviada para seu e-mail.");
-            this.dismissModal();
-        }, err => { this.presentAlert("Erro", "Verifique se seu e-mail está correto."); });
+        });
+        this.presentAlert("Senha Redefinida!", "Caso você tenha cadastro em nosso sistema você receberá um e-mail com a redefinição de senha, verifique seu e-mail!");
+        this.dismissModal();
+        // this.authenticationService.EsqueceuSenha(form.email).subscribe(
+        //     res => {
+        //     this.presentAlert("Atenção","Senha enviada para seu e-mail.");
+        //     this.dismissModal();
+        // },
+        // err => {  this.presentAlert("Erro","Verifique se seu e-mail está correto."); }
+        // );
     }
     dismissModal() {
         // using the injected ModalController this page
@@ -1145,7 +1185,7 @@ CadastroPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY29uZmlnbm90aWZpY2FjYW8vQzpcXFVzZXJzXFxMdWNhc1xcRG9jdW1lbnRzXFxQcm9qZXRvc1xcaG9yYS1kby1saXhvXFxhcHAyXFxhcHAyL3NyY1xcYXBwXFxwYWdlc1xcY29uZmlnbm90aWZpY2FjYW9cXGNvbmZpZ25vdGlmaWNhY2FvLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2NvbmZpZ25vdGlmaWNhY2FvL2NvbmZpZ25vdGlmaWNhY2FvLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0VBQ0EscUJBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2NvbmZpZ25vdGlmaWNhY2FvL2NvbmZpZ25vdGlmaWNhY2FvLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tbWVudS1idXR0b257XHJcbiAgICBjb2xvcjogI0ZGRkZGRjtcclxuICAgIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcclxuICB9IiwiaW9uLW1lbnUtYnV0dG9uIHtcbiAgY29sb3I6ICNGRkZGRkY7XG4gIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY29uZmlnbm90aWZpY2FjYW8vQzpcXFVzZXJzXFxMdWNhc1xcRG9jdW1lbnRzXFxQcm9qZXRvc1xcaG9yYS1kby1saXhvXFxhcHAyXFxpb3Mvc3JjXFxhcHBcXHBhZ2VzXFxjb25maWdub3RpZmljYWNhb1xcY29uZmlnbm90aWZpY2FjYW8uc2NzcyIsInNyYy9hcHAvcGFnZXMvY29uZmlnbm90aWZpY2FjYW8vY29uZmlnbm90aWZpY2FjYW8uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7RUFDQSxxQkFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvY29uZmlnbm90aWZpY2FjYW8vY29uZmlnbm90aWZpY2FjYW8uc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1tZW51LWJ1dHRvbntcclxuICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjNGNiMDUwO1xyXG4gIH0iLCJpb24tbWVudS1idXR0b24ge1xuICBjb2xvcjogI0ZGRkZGRjtcbiAgLS1iYWNrZ3JvdW5kOiAjNGNiMDUwO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -1316,7 +1356,7 @@ ConfigNotificacaoPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".iframe-wrapper iframe {\n  width: 100%;\n  height: 100%;\n}\n\n.iframe-wrapper iframe {\n  width: 100%;\n  height: 100%;\n}\n\nion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZWNvdHJlcy9DOlxcVXNlcnNcXEx1Y2FzXFxEb2N1bWVudHNcXFByb2pldG9zXFxob3JhLWRvLWxpeG9cXGFwcDJcXGFwcDIvc3JjXFxhcHBcXHBhZ2VzXFxlY290cmVzXFxlY290cmVzLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2Vjb3RyZXMvZWNvdHJlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7QUNDSjs7QURFSTtFQUNBLFdBQUE7RUFDQSxZQUFBO0FDQ0o7O0FERUk7RUFDSSxjQUFBO0VBQ0EscUJBQUE7QUNDUiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2Vjb3RyZXMvZWNvdHJlcy5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmlmcmFtZS13cmFwcGVyIGlmcmFtZSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIH1cclxuXHJcbiAgICAuaWZyYW1lLXdyYXBwZXIgaWZyYW1lIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgfVxyXG5cclxuICAgIGlvbi1tZW51LWJ1dHRvbntcclxuICAgICAgICBjb2xvcjogI0ZGRkZGRjtcclxuICAgICAgICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XHJcbiAgICAgIH0iLCIuaWZyYW1lLXdyYXBwZXIgaWZyYW1lIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuLmlmcmFtZS13cmFwcGVyIGlmcmFtZSB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbmlvbi1tZW51LWJ1dHRvbiB7XG4gIGNvbG9yOiAjRkZGRkZGO1xuICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".iframe-wrapper iframe {\n  width: 100%;\n  height: 100%;\n}\n\n.iframe-wrapper iframe {\n  width: 100%;\n  height: 100%;\n}\n\nion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvZWNvdHJlcy9DOlxcVXNlcnNcXEx1Y2FzXFxEb2N1bWVudHNcXFByb2pldG9zXFxob3JhLWRvLWxpeG9cXGFwcDJcXGlvcy9zcmNcXGFwcFxccGFnZXNcXGVjb3RyZXNcXGVjb3RyZXMuc2NzcyIsInNyYy9hcHAvcGFnZXMvZWNvdHJlcy9lY290cmVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQ0NKOztBREVJO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUNDSjs7QURFSTtFQUNJLGNBQUE7RUFDQSxxQkFBQTtBQ0NSIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvZWNvdHJlcy9lY290cmVzLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaWZyYW1lLXdyYXBwZXIgaWZyYW1lIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgfVxyXG5cclxuICAgIC5pZnJhbWUtd3JhcHBlciBpZnJhbWUge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB9XHJcblxyXG4gICAgaW9uLW1lbnUtYnV0dG9ue1xyXG4gICAgICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4gICAgICAgIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcclxuICAgICAgfSIsIi5pZnJhbWUtd3JhcHBlciBpZnJhbWUge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG4uaWZyYW1lLXdyYXBwZXIgaWZyYW1lIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuaW9uLW1lbnUtYnV0dG9uIHtcbiAgY29sb3I6ICNGRkZGRkY7XG4gIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -1377,7 +1417,7 @@ EcotresPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvaGlzdG9yaWNvL0M6XFxVc2Vyc1xcTHVjYXNcXERvY3VtZW50c1xcUHJvamV0b3NcXGhvcmEtZG8tbGl4b1xcYXBwMlxcYXBwMi9zcmNcXGFwcFxccGFnZXNcXGhpc3Rvcmljb1xcaGlzdG9yaWNvLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2hpc3Rvcmljby9oaXN0b3JpY28uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7RUFDQSxxQkFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvaGlzdG9yaWNvL2hpc3Rvcmljby5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLW1lbnUtYnV0dG9ue1xyXG4gICAgY29sb3I6ICNGRkZGRkY7XHJcbiAgICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XHJcbiAgfSIsImlvbi1tZW51LWJ1dHRvbiB7XG4gIGNvbG9yOiAjRkZGRkZGO1xuICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvaGlzdG9yaWNvL0M6XFxVc2Vyc1xcTHVjYXNcXERvY3VtZW50c1xcUHJvamV0b3NcXGhvcmEtZG8tbGl4b1xcYXBwMlxcaW9zL3NyY1xcYXBwXFxwYWdlc1xcaGlzdG9yaWNvXFxoaXN0b3JpY28uc2NzcyIsInNyYy9hcHAvcGFnZXMvaGlzdG9yaWNvL2hpc3Rvcmljby5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLHFCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9oaXN0b3JpY28vaGlzdG9yaWNvLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tbWVudS1idXR0b257XHJcbiAgICBjb2xvcjogI0ZGRkZGRjtcclxuICAgIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcclxuICB9IiwiaW9uLW1lbnUtYnV0dG9uIHtcbiAgY29sb3I6ICNGRkZGRkY7XG4gIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -1473,7 +1513,7 @@ HistoricoPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvaGlzdG9yaWNvbm90aWZpY2FjYW8vQzpcXFVzZXJzXFxMdWNhc1xcRG9jdW1lbnRzXFxQcm9qZXRvc1xcaG9yYS1kby1saXhvXFxhcHAyXFxhcHAyL3NyY1xcYXBwXFxwYWdlc1xcaGlzdG9yaWNvbm90aWZpY2FjYW9cXGhpc3Rvcmljb25vdGlmaWNhY2FvLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2hpc3Rvcmljb25vdGlmaWNhY2FvL2hpc3Rvcmljb25vdGlmaWNhY2FvLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0VBQ0EscUJBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2hpc3Rvcmljb25vdGlmaWNhY2FvL2hpc3Rvcmljb25vdGlmaWNhY2FvLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tbWVudS1idXR0b257XHJcbiAgICBjb2xvcjogI0ZGRkZGRjtcclxuICAgIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcclxuICB9IiwiaW9uLW1lbnUtYnV0dG9uIHtcbiAgY29sb3I6ICNGRkZGRkY7XG4gIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvaGlzdG9yaWNvbm90aWZpY2FjYW8vQzpcXFVzZXJzXFxMdWNhc1xcRG9jdW1lbnRzXFxQcm9qZXRvc1xcaG9yYS1kby1saXhvXFxhcHAyXFxpb3Mvc3JjXFxhcHBcXHBhZ2VzXFxoaXN0b3JpY29ub3RpZmljYWNhb1xcaGlzdG9yaWNvbm90aWZpY2FjYW8uc2NzcyIsInNyYy9hcHAvcGFnZXMvaGlzdG9yaWNvbm90aWZpY2FjYW8vaGlzdG9yaWNvbm90aWZpY2FjYW8uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7RUFDQSxxQkFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvaGlzdG9yaWNvbm90aWZpY2FjYW8vaGlzdG9yaWNvbm90aWZpY2FjYW8uc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1tZW51LWJ1dHRvbntcclxuICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjNGNiMDUwO1xyXG4gIH0iLCJpb24tbWVudS1idXR0b24ge1xuICBjb2xvcjogI0ZGRkZGRjtcbiAgLS1iYWNrZ3JvdW5kOiAjNGNiMDUwO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -1591,7 +1631,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_auth_authentication_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/auth/authentication.service */ "./src/app/services/auth/authentication.service.ts");
 /* harmony import */ var src_app_models_usuario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/models/usuario */ "./src/app/models/usuario.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var _ionic_native_firebase_x_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/firebase-x/ngx */ "./node_modules/@ionic-native/firebase-x/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_firebase_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/firebase/ngx */ "./node_modules/@ionic-native/firebase/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var src_app_services_usuario_usuario_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/usuario/usuario.service */ "./src/app/services/usuario/usuario.service.ts");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
 /* harmony import */ var src_app_modals_esqueceusenha_esqueceusenha__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/modals/esqueceusenha/esqueceusenha */ "./src/app/modals/esqueceusenha/esqueceusenha.ts");
@@ -1602,6 +1642,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import { FirebaseX } from '@ionic-native/firebase-x/ngx';
 
 
 
@@ -1691,7 +1732,7 @@ LoginPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
     { type: src_app_services_usuario_usuario_service__WEBPACK_IMPORTED_MODULE_8__["UsuarioService"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["ModalController"] },
-    { type: _ionic_native_firebase_x_ngx__WEBPACK_IMPORTED_MODULE_7__["FirebaseX"] },
+    { type: _ionic_native_firebase_ngx__WEBPACK_IMPORTED_MODULE_7__["Firebase"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__["AlertController"] }
 ];
 LoginPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -1715,7 +1756,7 @@ LoginPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbWV1c2RhZG9zL0M6XFxVc2Vyc1xcTHVjYXNcXERvY3VtZW50c1xcUHJvamV0b3NcXGhvcmEtZG8tbGl4b1xcYXBwMlxcYXBwMi9zcmNcXGFwcFxccGFnZXNcXG1ldXNkYWRvc1xcbWV1c2RhZG9zLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL21ldXNkYWRvcy9tZXVzZGFkb3Muc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGNBQUE7RUFDQSxxQkFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvbWV1c2RhZG9zL21ldXNkYWRvcy5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLW1lbnUtYnV0dG9ue1xyXG4gICAgY29sb3I6ICNGRkZGRkY7XHJcbiAgICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XHJcbiAgfSIsImlvbi1tZW51LWJ1dHRvbiB7XG4gIGNvbG9yOiAjRkZGRkZGO1xuICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbWV1c2RhZG9zL0M6XFxVc2Vyc1xcTHVjYXNcXERvY3VtZW50c1xcUHJvamV0b3NcXGhvcmEtZG8tbGl4b1xcYXBwMlxcaW9zL3NyY1xcYXBwXFxwYWdlc1xcbWV1c2RhZG9zXFxtZXVzZGFkb3Muc2NzcyIsInNyYy9hcHAvcGFnZXMvbWV1c2RhZG9zL21ldXNkYWRvcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLHFCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9tZXVzZGFkb3MvbWV1c2RhZG9zLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tbWVudS1idXR0b257XHJcbiAgICBjb2xvcjogI0ZGRkZGRjtcclxuICAgIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcclxuICB9IiwiaW9uLW1lbnUtYnV0dG9uIHtcbiAgY29sb3I6ICNGRkZGRkY7XG4gIC0tYmFja2dyb3VuZDogIzRjYjA1MDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -1839,7 +1880,7 @@ MeusDadosPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvc3Vwb3J0ZS9DOlxcVXNlcnNcXEx1Y2FzXFxEb2N1bWVudHNcXFByb2pldG9zXFxob3JhLWRvLWxpeG9cXGFwcDJcXGFwcDIvc3JjXFxhcHBcXHBhZ2VzXFxzdXBvcnRlXFxzdXBvcnRlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL3N1cG9ydGUvc3Vwb3J0ZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtFQUNBLHFCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9zdXBvcnRlL3N1cG9ydGUuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1tZW51LWJ1dHRvbntcclxuICAgIGNvbG9yOiAjRkZGRkZGO1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjNGNiMDUwO1xyXG4gIH0iLCJpb24tbWVudS1idXR0b24ge1xuICBjb2xvcjogI0ZGRkZGRjtcbiAgLS1iYWNrZ3JvdW5kOiAjNGNiMDUwO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-menu-button {\n  color: #FFFFFF;\n  --background: #4cb050;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvc3Vwb3J0ZS9DOlxcVXNlcnNcXEx1Y2FzXFxEb2N1bWVudHNcXFByb2pldG9zXFxob3JhLWRvLWxpeG9cXGFwcDJcXGlvcy9zcmNcXGFwcFxccGFnZXNcXHN1cG9ydGVcXHN1cG9ydGUuc2NzcyIsInNyYy9hcHAvcGFnZXMvc3Vwb3J0ZS9zdXBvcnRlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0VBQ0EscUJBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3N1cG9ydGUvc3Vwb3J0ZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLW1lbnUtYnV0dG9ue1xyXG4gICAgY29sb3I6ICNGRkZGRkY7XHJcbiAgICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XHJcbiAgfSIsImlvbi1tZW51LWJ1dHRvbiB7XG4gIGNvbG9yOiAjRkZGRkZGO1xuICAtLWJhY2tncm91bmQ6ICM0Y2IwNTA7XG59Il19 */");
 
 /***/ }),
 
@@ -2012,7 +2053,7 @@ let AuthenticationService = class AuthenticationService {
         // };
         const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]().set('Content-Type', 'text/plain; charset=utf-8');
         // return this.http.get(environment.URLS.API_URL + '/painel/mail/forget.php?auth=AKur0On8iWjP2OmasopsZA&mail=' + model.email,httpOptions).pipe(catchError(this.handleError.bind(this)));
-        return this.http.get('https://timesolucoes.tec.br/ws/mail/forget.php?mail=' + email, { headers, responseType: 'text' }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError.bind(this)));
+        return this.http.get('https://timesolucoes.tec.br/ws/mail/forget.php?mail=' + email, { responseType: 'text' }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError.bind(this)));
     }
     TracarLogin() {
         const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]().set('Content-Type', 'text/plain; charset=utf-8');
@@ -2314,7 +2355,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Lucas\Documents\Projetos\hora-do-lixo\app2\app2\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Lucas\Documents\Projetos\hora-do-lixo\app2\ios\src\main.ts */"./src/main.ts");
 
 
 /***/ })

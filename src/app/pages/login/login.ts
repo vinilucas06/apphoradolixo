@@ -5,7 +5,8 @@ import * as sha512 from 'js-sha512';
 import { AuthenticationService } from 'src/app/services/auth/authentication.service';
 import { Usuario } from 'src/app/models/usuario';
 import { Router } from '@angular/router';
-import { FirebaseX } from '@ionic-native/firebase-x/ngx';
+// import { FirebaseX } from '@ionic-native/firebase-x/ngx';
+import { Firebase } from '@ionic-native/firebase/ngx';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { ModalController, AlertController } from '@ionic/angular';
 import { EsqueceuSenhaModal } from 'src/app/modals/esqueceusenha/esqueceusenha';
@@ -24,7 +25,7 @@ export class LoginPage implements OnInit {
         private routerComponent: Router,
         private usuarioService: UsuarioService,
         public modalController: ModalController,
-        private firebase: FirebaseX,
+        private firebase: Firebase,
         public alertController: AlertController) {
         this.form = this.fb.group({
             login: ['', Validators.required],
